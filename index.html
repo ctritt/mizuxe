@@ -12,8 +12,8 @@
   <title>Mizuxe</title>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top py-2">
+<body data-spy="scroll" data-target="#main-nav" id="home">
+  <nav id="main-nav" class="navbar navbar-expand-md navbar-light fixed-top py-2">
     <div class="container">
       <a href="#home" class="navbar-brand">
         <img src="img/mlogo.png" width="50" height="50" alt="">
@@ -31,7 +31,7 @@
             <a href="#about" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="#authors" class="nav-link">Authors</a>
+            <a href="#meet-authors" class="nav-link">Authors</a>
           </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link">Contact</a>
@@ -193,7 +193,7 @@
   </section>
 
   <!-- Authors -->
-  <section id="authors" class="text-center my-5">
+  <section id="meet-authors" class="text-center py-5">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -303,6 +303,60 @@
     </div>
   </section>
 
+  <section id="contact" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <h3>Get In Touch</h3>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, sequi.</p>
+          <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+              <input type="text" class="form-control form-control-lg" placeholder="Name">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+              <input type="email" class="form-control form-control-lg" placeholder="Email">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fas fa-pencil-alt"></i>
+                </div>
+              </div>
+              <textarea cols="30" rows="5" class="form-control form-control-lg" placeholder="Message"></textarea>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block">Submit</button>
+          </form>
+        </div>
+        <div class="col-lg-3 d-none d-lg-block align-self-center">
+          <img class="img-fluid" src="img/mlogo.png" alt="Mizuxe Logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-4">
+          <h3 class="d-inline">Mizuxe</h3>
+          Copyright &copy
+          <span id="year"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -315,6 +369,23 @@
 
     const navHeight = $('nav').outerHeight(true);
     document.body.style.marginTop = `${navHeight}px`;
+
+    $('body').scrollspy({ target: '#main-nav' });
+
+    // Smooth Scrolling
+    $('#main-nav a').on('click', function (evt) {
+      if (this.hash !== '') {
+        evt.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          window.location.hash = hash;
+        });
+      }
+    });
 
   </script>
 </body>

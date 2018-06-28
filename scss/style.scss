@@ -28,7 +28,7 @@ $text-muted: #6c757d;
   }
 }
 
-#authors {
+#meet-authors {
 
   img {
     margin-top: -50px;
@@ -50,7 +50,7 @@ $text-muted: #6c757d;
     
     background: $primary;
 
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
 
     i {
       display: block;
@@ -89,4 +89,23 @@ $text-muted: #6c757d;
       margin-bottom: 1rem;
     }
   }
+
+  #meet-authors {
+    .card:hover {
+      i {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px){
+  #meet-authors {
+    .card:hover {
+      i {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
 }

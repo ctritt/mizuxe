@@ -1,5 +1,6 @@
 $primary: #3292a6;
 $primary-overlay: rgba(50, 146, 166, 0.8);
+$text-muted: #6c757d;
 
 .navbar {
   box-shadow: 2px 2px 5px $primary;
@@ -27,9 +28,52 @@ $primary-overlay: rgba(50, 146, 166, 0.8);
   }
 }
 
-// #subscribe {
-//   background: #333;
-// }
+#authors {
+
+  img {
+    margin-top: -50px;
+  }
+
+  h5 {
+    color: $primary;
+  }
+
+  i {
+    display: none;
+  }
+
+  .fab {
+    color: white;
+  }
+
+  .card:hover {
+    
+    background: $primary;
+
+    margin-bottom: 48px;
+
+    i {
+      display: block;
+    }
+
+    h5 {
+      color: rgb(190, 113, 109);
+    }
+
+   .card-title, .card-text{
+      color: white;
+    }
+  }
+
+}
+
+
+
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid;
+}
 
 @media (max-width: 768px) {
   #showcase {
